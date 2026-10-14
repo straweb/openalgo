@@ -20,38 +20,56 @@ export default defineConfig({
   // /tools pages that load Plotly (StrategyBuilder, MaxPain, OI Tracker, etc.)
   // threw "global is not defined". Map `global` to the browser `globalThis`.
   define: {
-    global: 'globalThis',
+    global: "globalThis",
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   server: {
     port: 5173,
     proxy: {
-      '/api': {
-        target: 'http://localhost:5000',
+      "/api": {
+        target: "http://localhost:5000",
         changeOrigin: true,
       },
-      '/socket.io': {
-        target: 'http://localhost:5000',
+      "/socket.io": {
+        target: "http://localhost:5000",
         ws: true,
       },
-      '/auth': {
-        target: 'http://localhost:5000',
+      "/auth": {
+        target: "http://localhost:5000",
+        changeOrigin: true,
+      },
+      "/dhan": {
+        target: "http://localhost:5000",
+        changeOrigin: true,
+      },
+
+      "/idirect": {
+        target: "http://localhost:5000",
+        changeOrigin: true,
+      },
+
+      "/icici": {
+        target: "http://localhost:5000",
+        changeOrigin: true,
+      },
+      "/shoonya": {
+        target: "http://localhost:5000",
         changeOrigin: true,
       },
       // User indicator modules are served by Flask from strategies/indicators,
       // never bundled, so the dev server has to pass them through too.
-      '/custom-indicators': {
-        target: 'http://localhost:5000',
+      "/custom-indicators": {
+        target: "http://localhost:5000",
         changeOrigin: true,
       },
     },
   },
   build: {
-    outDir: 'dist',
+    outDir: "dist",
     sourcemap: false,
     // Plotly core can legitimately produce a large shared chart chunk.
     // Keep the limit high enough for that known vendor cost while still
@@ -65,13 +83,17 @@ export default defineConfig({
         // Vite already splits the heavy charting libs (plotly, lightweight-
         // charts) automatically, so we only carve out the framework core here.
         manualChunks(id) {
-          if (!id.includes('node_modules')) return
-          if (/[\\/]node_modules[\\/](react|react-dom|react-router|react-router-dom|scheduler)[\\/]/.test(id)) {
-            return 'react-vendor'
+          if (!id.includes("node_modules")) return;
+          if (
+            /[\\/]node_modules[\\/](react|react-dom|react-router|react-router-dom|scheduler)[\\/]/.test(
+              id,
+            )
+          ) {
+            return "react-vendor";
           }
-          if (id.includes('tanstack/react-query')) return 'tanstack'
+          if (id.includes("tanstack/react-query")) return "tanstack";
         },
       },
     },
   },
-})
+});

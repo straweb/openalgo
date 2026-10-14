@@ -16,43 +16,44 @@ import { useAuthStore } from '@/stores/authStore'
 
 // All supported brokers with their display names and auth types
 const allBrokers = [
-  { id: 'fivepaisa', name: '5 Paisa', authType: 'totp' },
-  { id: 'fivepaisaxts', name: '5 Paisa (XTS)', authType: 'totp' },
-  { id: 'aliceblue', name: 'Alice Blue', authType: 'totp' },
-  { id: 'angel', name: 'Angel One', authType: 'totp' },
-  { id: 'arrow', name: 'Arrow', authType: 'oauth' },
-  { id: 'compositedge', name: 'CompositEdge', authType: 'oauth' },
-  { id: 'dhan', name: 'Dhan', authType: 'oauth' },
-  { id: 'deltaexchange', name: 'Delta Exchange', authType: 'totp' },
-  { id: 'indmoney', name: 'IndMoney', authType: 'totp' },
-  { id: 'dhan_sandbox', name: 'Dhan (Sandbox)', authType: 'totp' },
-  { id: 'definedge', name: 'Definedge', authType: 'totp' },
-  { id: 'firstock', name: 'Firstock', authType: 'totp' },
-  { id: 'flattrade', name: 'Flattrade', authType: 'oauth' },
-  { id: 'motilal', name: 'Motilal Oswal', authType: 'totp' },
-  { id: 'fyers', name: 'Fyers', authType: 'oauth' },
-  { id: 'groww', name: 'Groww', authType: 'totp' },
-  { id: 'hdfcsecurities', name: 'HDFC Securities', authType: 'oauth' },
-  { id: 'hdfcsky', name: 'HDFC Sky', authType: 'oauth' },
-  { id: 'ibulls', name: 'Ibulls', authType: 'totp' },
-  { id: 'iifl', name: 'IIFL', authType: 'totp' },
-  { id: 'iiflcapital', name: 'IIFL Capital', authType: 'oauth' },
-  { id: 'jainamxts', name: 'JainamXts', authType: 'totp' },
-  { id: 'kotak', name: 'Kotak Securities', authType: 'totp' },
-  { id: 'mstock', name: 'mStock by Mirae Asset', authType: 'totp' },
-  { id: 'nubra', name: 'Nubra', authType: 'totp' },
-  { id: 'paytm', name: 'Paytm Money', authType: 'oauth' },
-  { id: 'pocketful', name: 'Pocketful', authType: 'oauth' },
-  { id: 'rmoney', name: 'RMoney', authType: 'oauth' },
-  { id: 'samco', name: 'Samco', authType: 'totp' },
-  { id: 'shoonya', name: 'Shoonya', authType: 'totp' },
-  { id: 'tradejini', name: 'Tradejini', authType: 'totp' },
-  { id: 'tradesmart', name: 'TradeSmart', authType: 'oauth' },
-  { id: 'upstox', name: 'Upstox', authType: 'oauth' },
-  { id: 'wisdom', name: 'Wisdom Capital', authType: 'totp' },
-  { id: 'zebu', name: 'Zebu', authType: 'totp' },
-  { id: 'zerodha', name: 'Zerodha', authType: 'oauth' },
-] as const
+  { id: "icici", name: "icici", authType: "oauth" },
+  { id: "fivepaisa", name: "5 Paisa", authType: "totp" },
+  { id: "fivepaisaxts", name: "5 Paisa (XTS)", authType: "totp" },
+  { id: "aliceblue", name: "Alice Blue", authType: "totp" },
+  { id: "angel", name: "Angel One", authType: "totp" },
+  { id: "arrow", name: "Arrow", authType: "oauth" },
+  { id: "compositedge", name: "CompositEdge", authType: "oauth" },
+  { id: "dhan", name: "Dhan", authType: "oauth" },
+  { id: "deltaexchange", name: "Delta Exchange", authType: "totp" },
+  { id: "indmoney", name: "IndMoney", authType: "totp" },
+  { id: "dhan_sandbox", name: "Dhan (Sandbox)", authType: "totp" },
+  { id: "definedge", name: "Definedge", authType: "totp" },
+  { id: "firstock", name: "Firstock", authType: "totp" },
+  { id: "flattrade", name: "Flattrade", authType: "oauth" },
+  { id: "motilal", name: "Motilal Oswal", authType: "totp" },
+  { id: "fyers", name: "Fyers", authType: "oauth" },
+  { id: "groww", name: "Groww", authType: "totp" },
+  { id: "hdfcsecurities", name: "HDFC Securities", authType: "oauth" },
+  { id: "hdfcsky", name: "HDFC Sky", authType: "oauth" },
+  { id: "ibulls", name: "Ibulls", authType: "totp" },
+  { id: "iifl", name: "IIFL", authType: "totp" },
+  { id: "iiflcapital", name: "IIFL Capital", authType: "oauth" },
+  { id: "jainamxts", name: "JainamXts", authType: "totp" },
+  { id: "kotak", name: "Kotak Securities", authType: "totp" },
+  { id: "mstock", name: "mStock by Mirae Asset", authType: "totp" },
+  { id: "nubra", name: "Nubra", authType: "totp" },
+  { id: "paytm", name: "Paytm Money", authType: "oauth" },
+  { id: "pocketful", name: "Pocketful", authType: "oauth" },
+  { id: "rmoney", name: "RMoney", authType: "oauth" },
+  { id: "samco", name: "Samco", authType: "totp" },
+  { id: "shoonya", name: "Shoonya", authType: "totp" },
+  { id: "tradejini", name: "Tradejini", authType: "totp" },
+  { id: "tradesmart", name: "TradeSmart", authType: "oauth" },
+  { id: "upstox", name: "Upstox", authType: "oauth" },
+  { id: "wisdom", name: "Wisdom Capital", authType: "totp" },
+  { id: "zebu", name: "Zebu", authType: "totp" },
+  { id: "zerodha", name: "Zerodha", authType: "oauth" },
+] as const;
 
 interface BrokerConfig {
   broker_name: string
@@ -132,100 +133,104 @@ export default function BrokerSelect() {
 
     // Build login URL based on broker type (matching original broker.html logic)
     switch (selectedBroker) {
-      case 'fivepaisa':
-      case 'fivepaisaxts':
-      case 'aliceblue':
-      case 'angel':
-      case 'mstock':
-      case 'indmoney':
-      case 'deltaexchange':
-      case 'jainamxts':
-      case 'dhan_sandbox':
-      case 'definedge':
-      case 'firstock':
-      case 'samco':
-      case 'motilal':
-      case 'nubra':
-      case 'groww':
-      case 'ibulls':
-      case 'iifl':
-      case 'kotak':
-      case 'rmoney':
-      case 'shoonya':
-      case 'tradejini':
-      case 'tradesmart':
-      case 'wisdom':
-      case 'zebu':
+      case "icici":
+      case "idirect":
+        loginUrl = `https://api.icicidirect.com/apiuser/login?api_key=${broker_api_key}`;
+        break;
+      case "fivepaisa":
+      case "fivepaisaxts":
+      case "aliceblue":
+      case "angel":
+      case "mstock":
+      case "indmoney":
+      case "deltaexchange":
+      case "jainamxts":
+      case "dhan_sandbox":
+      case "definedge":
+      case "firstock":
+      case "samco":
+      case "motilal":
+      case "nubra":
+      case "groww":
+      case "ibulls":
+      case "iifl":
+      case "kotak":
+      case "rmoney":
+      case "shoonya":
+      case "tradejini":
+      case "tradesmart":
+      case "wisdom":
+      case "zebu":
         // Brokers using callback route (form-based or redirect-based)
-        loginUrl = `/${selectedBroker}/callback`
-        break
+        loginUrl = `/${selectedBroker}/callback`;
+        break;
 
-      case 'iiflcapital':
+      case "iiflcapital":
         // Route via backend callback endpoint to centralize URL generation and
         // avoid provider-specific redirect parameter parsing differences.
-        loginUrl = '/iiflcapital/callback'
-        break
+        loginUrl = "/iiflcapital/callback";
+        break;
 
-      case 'dhan':
-        loginUrl = '/dhan/initiate-oauth'
-        break
+      case "dhan":
+        loginUrl = "/dhan/initiate-oauth";
+        break;
 
-      case 'compositedge':
-        loginUrl = `https://xts.compositedge.com/interactive/thirdparty?appKey=${broker_api_key}&returnURL=${redirect_url}`
-        break
+      case "compositedge":
+        loginUrl = `https://xts.compositedge.com/interactive/thirdparty?appKey=${broker_api_key}&returnURL=${redirect_url}`;
+        break;
 
-      case 'flattrade': {
-        const flattradeApiKey = getFlattradeApiKey(broker_api_key)
-        loginUrl = `https://auth.flattrade.in/?app_key=${flattradeApiKey}`
-        break
+      case "flattrade": {
+        const flattradeApiKey = getFlattradeApiKey(broker_api_key);
+        loginUrl = `https://auth.flattrade.in/?app_key=${flattradeApiKey}`;
+        break;
       }
 
-      case 'fyers':
-        loginUrl = `https://api-t1.fyers.in/api/v3/generate-authcode?client_id=${broker_api_key}&redirect_uri=${redirect_url}&response_type=code&state=2e9b44629ebb28226224d09db3ffb47c`
-        break
+      case "fyers":
+        loginUrl = `https://api-t1.fyers.in/api/v3/generate-authcode?client_id=${broker_api_key}&redirect_uri=${redirect_url}&response_type=code&state=2e9b44629ebb28226224d09db3ffb47c`;
+        break;
 
-      case 'upstox':
-        loginUrl = `https://api.upstox.com/v2/login/authorization/dialog?response_type=code&client_id=${broker_api_key}&redirect_uri=${redirect_url}`
-        break
+      case "upstox":
+        loginUrl = `https://api.upstox.com/v2/login/authorization/dialog?response_type=code&client_id=${broker_api_key}&redirect_uri=${redirect_url}`;
+        break;
 
-      case 'zerodha':
-        loginUrl = `https://kite.trade/connect/login?api_key=${broker_api_key}`
-        break
+      case "zerodha":
+        loginUrl = `https://kite.trade/connect/login?api_key=${broker_api_key}`;
+        break;
 
-      case 'arrow':
+      case "arrow":
         // Arrow hosted login; redirects back to /arrow/callback with request-token.
-        loginUrl = `https://app.arrow.trade/app/login?appID=${broker_api_key}`
-        break
+        loginUrl = `https://app.arrow.trade/app/login?appID=${broker_api_key}`;
+        break;
 
-      case 'hdfcsecurities':
+      case "hdfcsecurities":
         // HDFC Securities InvestRight hosted login (credentials + 2FA +
         // consent); redirects back to the app's registered callback with a
         // request token.
-        loginUrl = `https://developer.hdfcsec.com/oapi/v1/login?api_key=${broker_api_key}`
-        break
+        loginUrl = `https://developer.hdfcsec.com/oapi/v1/login?api_key=${broker_api_key}`;
+        break;
 
-      case 'hdfcsky':
+      case "hdfcsky":
         // HDFC Sky hosted login (credentials + 2FA + consent); redirects back
         // to the app's registered callback with a request token.
-        loginUrl = `https://developer.hdfcsky.com/oapi/v1/login?api_key=${broker_api_key}`
-        break
+        loginUrl = `https://developer.hdfcsky.com/oapi/v1/login?api_key=${broker_api_key}`;
+        break;
 
-      case 'paytm':
-        loginUrl = `https://login.paytmmoney.com/merchant-login?apiKey=${broker_api_key}&state={default}`
-        break
+      case "paytm":
+        loginUrl = `https://login.paytmmoney.com/merchant-login?apiKey=${broker_api_key}&state={default}`;
+        break;
 
-      case 'pocketful': {
-        const state = generateRandomState()
-        localStorage.setItem('pocketful_oauth_state', state)
-        const scope = 'orders holdings'
-        loginUrl = `https://trade.pocketful.in/oauth2/auth?client_id=${broker_api_key}&redirect_uri=${redirect_url}&response_type=code&scope=${encodeURIComponent(scope)}&state=${encodeURIComponent(state)}`
-        break
+      case "pocketful": {
+        const state = generateRandomState();
+        localStorage.setItem("pocketful_oauth_state", state);
+        const scope = "orders holdings";
+        loginUrl = `https://trade.pocketful.in/oauth2/auth?client_id=${broker_api_key}&redirect_uri=${redirect_url}&response_type=code&scope=${encodeURIComponent(scope)}&state=${encodeURIComponent(state)}`;
+        break;
       }
 
       default:
-        setError('Please select a broker')
-        setIsSubmitting(false)
-        return
+        setError("Please select a broker");
+        setIsSubmitting(false);
+        return;
     }
 
     // Use setTimeout to ensure state updates complete before navigation
